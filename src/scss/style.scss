@@ -1,0 +1,114 @@
+//colors
+$color-spring-wood: #f7f8f1;
+$color-astronaut: #262972;
+$color-tango: #ed6b27;
+$color-supernova: #fcc60a;
+$color-black: #000205;
+$color-alizarin-crimson: #ec1b27;
+$color-fun-green: #0b7338;
+$color-disco: #871b5c;
+$color-stack: #858b89;
+$color-russet: #834a18;
+$white-20: rgba(255, 255, 255, .2);
+$color-ceramic: #fcfcf7;
+$color-periglacial-blue: #e4e5d7;
+
+
+$brand-colors: ($color-astronaut, $color-spring-wood),
+($color-tango, $color-spring-wood),
+($color-supernova, $color-black),
+($color-alizarin-crimson, $color-spring-wood),
+($color-fun-green, $color-spring-wood),
+($color-disco, $color-spring-wood),
+($color-stack, $color-spring-wood),
+($color-russet, $color-spring-wood);
+
+body {
+	background: url("../img/subway-blur.jpg");
+	background-size: cover;
+	margin: auto;
+	padding: 100px 0;
+	width: 100%;
+}
+
+@each $background-color,
+$text-color in $brand-colors {
+	$i: index($brand-colors, ($background-color, $text-color));
+
+	.service-holder {
+		&:nth-of-type(#{$i}) {
+			figure {
+				background-color: $background-color;
+				color: $text-color;
+			}
+		}
+	}
+}
+
+.service-holder {
+	border: 1px solid transparent;
+	margin: 15px auto 30px;
+	text-align: center;
+	transition: all 0.3s ease;
+
+
+	>figure {
+		border: 1px solid transparent;
+		border-radius: 50%;
+		font-size: 30px;
+		height: 140px;
+		line-height: 140px;
+		margin: 0 auto 15px;
+		width: 140px;
+
+		>i {
+			font-size: 70px;
+			line-height: 140px;
+		}
+	}
+
+	h4 {
+		color: $color-ceramic;
+		font-family: Raleway, sans-serif;
+		font-weight: 600;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
+
+	p {
+		color: $color-periglacial-blue;
+		font-family: Montserrat, sans-serif;
+		letter-spacing: 1px;
+	}
+}
+
+.col-centered {
+	display: inline-block;
+	float: none;
+	margin-left: -4px;
+	vertical-align: bottom;
+}
+
+.liner {
+	background: $color-spring-wood;
+	display: inline-block;
+	height: 20px;
+	margin-top: 50px;
+	width: 100%;
+}
+
+.title {
+	color: $color-spring-wood;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 100px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 600;
+}
+
+.sign {
+	background: $color-black;
+	border-radius: 25px;
+	box-shadow: 3px 3px 10px 5px $white-20;
+	text-align: center;
+}
